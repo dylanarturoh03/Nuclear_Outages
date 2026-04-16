@@ -1,0 +1,215 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: white;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.tableContainer {
+    margin-bottom: 16px;
+}
+
+/* All tabs look like this by default */
+.tab {
+    background: white;
+    color: gray;
+    border: 1px solid gray;
+    padding: 8px 16px;
+    margin-top: 24px;
+    cursor: pointer;
+}
+
+/* The active one looks like this */
+.tab.active {
+    background: black;
+    color: white;
+    border: 1px solid black;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;   /* removes double borders */
+    font-size: 14px;
+}
+
+.table-header {
+    background: #333;
+    color: white;
+    padding: 10px 16px;
+    text-align: center;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+}
+
+td {
+    text-align: center;
+    cursor: pointer;
+}
+
+.table-header:hover {
+    background: #444;
+}
+
+.active-sort {
+    background: #555;
+}
+
+.sort-arrow {
+    margin-left: 8px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.table-cell {
+    padding: 10px 16px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Alternating row colors */
+.row-even {
+    background: white;
+}
+
+.row-odd {
+    background: #f9f9f9;
+}
+
+/* Highlight row on hover */
+tr:hover {
+    background: #f0f0f0;
+}
+
+.popover {
+    display: none;
+    position: fixed;
+    background: white;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 8px;
+    z-index: 1000;
+}
+
+.popover-value {
+    margin-top: 4px;
+    padding: 4px;
+    text-align: center;
+}
+
+.filter-operators {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.operator-btn {
+    width: 100%;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    border: 1px solid gray;
+    background: white;
+    border-radius: 4px;
+}
+
+.operator-btn:hover {
+    background: #f0f0f0;
+}
+
+.pagination {
+    display:flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+#pageInfo {
+    font-size: 14px;
+    color: gray;
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: white;
+    font-size: 24px;
+    gap: 16px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 5px solid white;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#toastContainer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z_index: 9999;
+}
+
+.toast {
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    min-width: 200px;
+}
+
+.toast-success {
+    background: #2d8a4e;
+}
+
+.toast-error {
+    background: #c0392b;
+}
+
+.toast-fade {
+    opacity: 0;
+}

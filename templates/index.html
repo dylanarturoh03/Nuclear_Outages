@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuclear Outages</title>
+    <link rel='stylesheet' href='{{ url_for('static', filename='style.css') }}'>
+    <link rel='icon' href='{{ url_for('static', filename='data-favicon.png') }}'>
+</head>
+<body>
+    <div class='container'>
+        <div id='tableContainer' class='tableContainer'>
+            <div class='tabs'>
+                <button class='tab active' data-table='outages'>Outages</button>
+                <button class='tab' data-table='generators'>Generators</button>
+                <button class='tab' data-table='facilities'>Facilities</button>
+                <button id='refreshBtn'>Refresh</button>
+            </div>
+            <div id='table-body'></div>
+        </div>
+
+        <div id='pagination' class='pagination'>
+            <button id='prevPage'>Previous Page</button>
+            <span id='pageInfo'></span>
+            <button id='nextPage'>Next Page</button>
+        </div>
+
+        <div id='popover' class='popover'></div>
+    </div>
+
+    <div id='loadingOverlay' style='display: none;'>
+        <div class='spinner'></div>
+    </div>
+
+    <div id='toastContainer'></div>
+
+    <script src='{{ url_for('static', filename='script.js')}}'></script>
+</body>
+</html>

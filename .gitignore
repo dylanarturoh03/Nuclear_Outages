@@ -1,0 +1,17 @@
+# Environments
+.venv/
+*.env
+
+# Logs
+*.log
+
+# Storage
+data/
+*.parquet
+*.db
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# VSCode settings
+.vscode/
